@@ -12,7 +12,6 @@ class PaginationOfBlog extends Component {
       activePage: 1,
       blogsPerPage: 30
     };
-
   }
 
   render() {

@@ -1,7 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import PaginationOfBlog from './Pagination';
-
+import {
+  Switch, Route, BrowserRouter,
+} from "react-router-dom";
+import BlogCommentList from './BlogCommentList';
+import UserDetails from './UserDetails';
 
 class App extends React.Component {
 
@@ -27,7 +31,15 @@ class App extends React.Component {
       this.state.blogPosts.length > 0 &&
       <div>
         <center> <h3 className="ui large dividing header"> Blogs </h3> </center>
-        <PaginationOfBlog blogPosts={this.state.blogPosts} />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/blogs" component={() => <PaginationOfBlog blogPosts={this.state.blogPosts} />} exact />
+            <Route path="/comments/blog/:id" component={BlogCommentList} exact />
+            <Route path="post?author=" component={UserDetails} />
+          </Switch>
+        </BrowserRouter>
+
+        {/* <PaginationOfBlog blogPosts={this.state.blogPosts} /> */}
       </div>
     );
   }
