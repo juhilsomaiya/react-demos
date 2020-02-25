@@ -10,6 +10,7 @@ class UserDetails extends React.Component {
 
   async fetchUserPosts() {
     const user = this.props.location.search;
+    debugger;
     const userPosts = await Axios.get('http://localhost:9900/posts' + user);
     this.setState({
       userPosts: userPosts.data,
@@ -31,7 +32,7 @@ class UserDetails extends React.Component {
               {post.title}
             </div>
             <p>{post.description}</p>
-          </div>
+          </div>e
         </article>
       )
     })
