@@ -30,6 +30,9 @@ class PaginationOfBlog extends Component {
 
     return (
       <div>
+        <center>
+          <h4 className="ui large dividing header"> Blogs </h4>
+        </center>
         <BlogItem blogPosts={currentBlogs} />
         <Pagination activePage={activePage} totalPages={pageNumbers} onPageChange={onChange} ellipsisItem={null} />
       </div>

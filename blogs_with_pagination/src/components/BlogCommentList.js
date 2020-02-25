@@ -18,23 +18,35 @@ class BlogCommentList extends React.Component {
     this.fetchBlogComments();
   }
 
-  showUserInfo(user) {
-    window.location.href = '/post?author=' + user;
+  showUserInfo(event) {
+    const userName = event.currentTarget.attributes.name.value;
+    window.location.href = '/post?author=' + userName;
   }
 
   render() {
     let renderList = this.state.comments.map((comment) => {
       return (
-        <div className="ui segment" key={comment.id} onClick={this.showUserInfo(comment.author)}>
+        <div className="ui segment" key={comment.id}>
           <div className="ui medium dividing header">
             {comment.body}
           </div>
-          <p>User : {comment.author}</p>
+          <div onClick={this.showUserInfo} name={comment.author} className="user-item">
+            <div>
+              <i className="ui image user icon"></i>
+            </div>
+            <div>
+              <p>User : {comment.author}</p>
+            </div>
+          </div>
         </div>
       );
     })
     return (
-      <div> {renderList}</div>
+      <div>
+        <center>
+          <h4 className="ui large dividing header"> Comments on blog </h4>
+        </center>
+        {renderList}</div>
     );
   }
 }

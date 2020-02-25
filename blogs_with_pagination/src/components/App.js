@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import BlogCommentList from './BlogCommentList';
 import UserDetails from './UserDetails';
+import HomePage from './HomePage';
 
 class App extends React.Component {
 
@@ -28,18 +29,18 @@ class App extends React.Component {
 
   render() {
     return (
-      this.state.blogPosts.length > 0 &&
       <div>
-        <center> <h3 className="ui large dividing header"> Blogs </h3> </center>
+        {/* <p>Please follow the links below</p>
+        <p>List of blogs : /blogs </p>
+        <p>List of comments on blog : /comments/blog/:id </p> */}
         <BrowserRouter>
           <Switch>
+            <Route path="/" component={HomePage} exact/>
             <Route path="/blogs" component={() => <PaginationOfBlog blogPosts={this.state.blogPosts} />} exact />
             <Route path="/comments/blog/:id" component={BlogCommentList} exact />
-            <Route path="post?author=" component={UserDetails} />
+            <Route path="/post" component={UserDetails} />
           </Switch>
         </BrowserRouter>
-
-        {/* <PaginationOfBlog blogPosts={this.state.blogPosts} /> */}
       </div>
     );
   }
