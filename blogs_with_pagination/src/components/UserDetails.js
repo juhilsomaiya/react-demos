@@ -32,7 +32,7 @@ class UserDetails extends React.Component {
               {post.title}
             </div>
             <p>{post.description}</p>
-          </div>e
+          </div>
         </article>
       )
     })
