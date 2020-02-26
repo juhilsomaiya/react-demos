@@ -1,0 +1,44 @@
+.header,.to-do {
+  display: flex;
+  align-items: center
+}
+
+.header {
+  height: 50px;
+  justify-content: center;
+  color: #fff;
+  background-color: #363636;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 100
+}
+
+.to-do {
+  padding: 5px
+}
+
+.space {
+  flex: 1 1 auto
+}
+
+.container {
+  background-color: #e7e7e7;
+  height: 100vh;
+  display: flex;
+  justify-content: center
+}
+
+.to-do-container {
+  margin-top: 60px;
+  position: absolute;
+  width: 80%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column
+}
+
+.space-between {
+  height: 25px;
+  background-color: #e7e7e7
+}
