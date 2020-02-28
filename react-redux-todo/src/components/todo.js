@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
 
 class Todo extends Component {
     render() {
-        debugger;
         return (
             <div className="to-do">
                 <span className="to-do-name" style={{
